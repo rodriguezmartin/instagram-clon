@@ -1,0 +1,36 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <div class="buttons">
+      <button class="button button-icon ion-ios-arrow-thin-left" ng-click="modal.hide()"></button>
+    </div>
+    <h1 class="title">#{{hashtag}}</h1>
+    <div class="buttons">
+      <div class="ig-tabs header-tabs">
+        <ig-tab commonClass="button button-icon"
+                activeClass="ion-ios-grid-view"
+                inactiveClass="ion-ios-grid-view-outline"
+                name="grid">
+        </ig-tab>
+        <ig-tab commonClass="button button-icon"
+                activeClass="ion-ios-list"
+                inactiveClass="ion-ios-list-outline"
+                name="list">
+        </ig-tab>
+      </div>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <ion-refresher on-refresh="refresh()"></ion-refresher>
+    <ig-tab-content for="grid" class="posts-list">
+      <ig-post size="small" ng-repeat="post in posts"></ig-post>
+    </ig-tab-content>
+    <ig-tab-content for="list" class="posts-list">
+      <ig-post size="big" ng-repeat="post in posts"></ig-post>
+    </ig-tab-content>
+    <ion-infinite-scroll
+      ng-if="isThereMore()"
+      on-infinite="loadMore()"
+      distance="1%">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-modal-view>

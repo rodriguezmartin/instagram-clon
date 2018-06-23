@@ -1,0 +1,20 @@
+<ion-view view-title="Publicar" hide-nav-bar="true">
+  <ion-content scroll="false">
+    <div id="capturar">
+      <div id="camara">
+
+      </div>
+      <div class="botones">
+        <div ng-show="layout == 1">
+          <button ng-click="getPicture('gallery')" class="button button-icon icon ion-ios-folder-outline"></button>
+          <button ng-click="getPicture('camera')" id="shot-btn" class="button button-icon icon ion-ios-circle-filled"></button>    
+          <button ng-click="switchCamera()" class="button button-icon icon ion-ios-reverse-camera-outline medium-icon"></button>    
+        </div>
+        <div ng-show="layout == 2">
+          <button ng-click="discard()" class="button button-icon icon ion-ios-close-empty bigger-icon"></button>
+          <button ng-click="keep()" class="button button-icon icon ion-ios-checkmark bigger-icon"></button>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

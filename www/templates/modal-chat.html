@@ -1,0 +1,37 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <div class="buttons">
+      <button class="button button-icon ion-ios-arrow-thin-left" ng-click="modal.hide()">
+      </button>
+    </div>
+    <h1 class="title">{{chat.partnerUsername}}</h1>
+  </ion-header-bar>
+  <ion-content>
+    <ion-infinite-scroll
+      ng-if="isThereMore()"
+      on-infinite="loadMore()"
+      distance="1%">
+    </ion-infinite-scroll>
+    <ul class="chat padding">
+      <li ng-repeat="msg in messages" ng-class="isMine(msg) ? 'me' : 'reciever'">
+        <img ng-if="!isMine(msg)" src="{{API_ROOT +'/img/profile/'+ (chat.partnerPicture || '0.jpg')}}">
+        <div ng-style="calcWidth(msg)"><p ng-bind-html="msg.content | parseFlags"></p></div>
+      </li>
+    </ul>
+  </ion-content>
+  <ion-footer-bar class="item-input-inset">
+    <form ng-submit="submit(newMessage)" name="chatForm">
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <input type="text"
+                ng-model="newMessage.content" 
+                placeholder="Escribe un mensaje..."
+                name="content"
+                maxlength="300"
+                id="chatInput">
+        </label>
+        <button class="button button-small button-icon icon ion-ios-paperplane"></button>
+      </div>
+    </form>
+  </ion-footer-bar>
+</ion-modal-view>

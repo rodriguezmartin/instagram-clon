@@ -1,0 +1,29 @@
+<div class="post post-big">
+  <img src="{{API_ROOT +'/img/posts/'+ post.picture}}" on-double-tap="like()">
+  <div ng-if="post.repostedPostId" class="repostedMsg">
+    Post <a ng-click="modalPost(post.repostedPostId)">original</a> por <a ng-click="modalPerfil(post.repostedPostOp)">@{{post.repostedPostOp}}</a>
+  </div>
+  <div class="row">
+    <div class="col col-10">
+      <img src="{{API_ROOT +'/img/profile/'+ (post.opPicture || '0.jpg')}}">
+    </div>
+    <div class="col">
+      <p class="post-header">
+        <a ng-click="modalPerfil(post.opUsername)">{{post.opUsername}}</a>
+        <span>{{moment(post.tstamp).fromNow()}}</span>
+      </p>
+      <p class="post-body" compile="post.descr | parseFlags"></p>
+      <ul class="post-buttons button-bar">
+        <ig-likeswidget name="post" size="big"></ig-likeswidget>
+        <li ng-click="modalComments(post.id)">
+          <a class="button button-icon ion-ios-chatbubble-outline"></a>
+          <a class="counter" ng-show="post.comments_count != '0'">{{post.comments_count}}</a>
+        </li>
+        <li>
+          <a class="button button-icon ion-ios-paperplane-outline" ng-click="modalRepost(post)"></a>
+          <a class="counter" ng-show="post.repost_count != '0'">{{post.repost_count}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

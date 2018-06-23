@@ -1,0 +1,66 @@
+<ion-view view-title="Buscar" hide-nav-bar="true">
+  <div class="bar bar-header item-input-inset">
+    <label class="item-input-wrapper">
+      <i class="icon ion-ios-search placeholder-icon"></i>
+      <input type="search" placeholder="Buscar" ng-model="query">
+    </label>
+  </div>
+  <div ng-hide="query.length > 2" class="searchSection">
+    <ion-content>
+      <ion-refresher on-refresh="refresh()"></ion-refresher>
+      <div class="list">
+        <div class="item item-divider divider-with-tabs">
+          <span>Sugerencias</span>
+          <div class="ig-tabs">
+            <ig-tab commonClass="icon"
+                    activeClass="ion-ios-grid-view"
+                    inactiveClass="ion-ios-grid-view-outline"
+                    name="grid">Grilla
+            </ig-tab>
+            <ig-tab commonClass="icon"
+                    activeClass="ion-ios-list"
+                    inactiveClass="ion-ios-list-outline"
+                    name="list">Lista
+            </ig-tab>
+          </div>
+        </div>
+        <ig-tab-content for="grid" class="posts-list">
+          <ig-post size="small" ng-repeat="post in posts"></ig-post>
+        </ig-tab-content>
+        <ig-tab-content for="list" class="posts-list">
+          <ig-post size="big" ng-repeat="post in posts"></ig-post>
+        </ig-tab-content>
+      </div>
+      <ion-infinite-scroll
+        ng-if="isThereMore()"
+        on-infinite="loadMore()"
+        distance="50%">
+      </ion-infinite-scroll>
+    </ion-content>
+  </div>
+  <div ng-show="query.length > 2" class="searchSection">
+    <ion-content>
+      <div class="list">
+        <div class="item item-divider">
+          Personas
+        </div>
+        <p ng-show="!accounts.length" class="padding">0 resultados.</p>
+        <a class="item item-avatar" 
+            ng-repeat="account in accounts"
+            ng-click="modalPerfil(account.username)">
+          <img src="{{API_ROOT +'/img/profile/'+ account.picture}}">
+          <h2>{{account.username}}</h2>
+          <p>{{account.title}}</p>
+        </a>
+        <div class="item item-divider">
+          Hashtags
+        </div>
+        <p ng-show="!hashtags.length" class="padding">0 resultados.</p>
+        <a class="item hashtag" ng-repeat="hashtag in hashtags" ng-click="modalHashtag(hashtag.hashtag.slice(1))">
+          <p>{{hashtag.hashtag}}</p>
+          <span>{{hashtag.count}} resultados</span>
+        </a>
+      </div>
+    </ion-content>
+  </div>
+</ion-view>

@@ -1,0 +1,34 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <div class="buttons">
+      <button class="button button-icon ion-ios-arrow-thin-left" ng-click="modal.hide()">
+      </button>
+    </div>
+    <h1 class="title">Info. de perfil</h1>
+    <div class="buttons">
+      <button class="button button-icon ion-ios-checkmark" ng-click="submitForm()">
+      </button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <div class="row">
+      <div class="col col-25 profile-img">
+        <img src="{{API_ROOT +'/img/profile/'+ (user.picture || '0.jpg')}}">
+      </div>
+      <div class="col profile-info">
+        <form ng-submit="submit(datos)" name="profileForm" id="profileForm">
+          <input type="text" 
+                  name="title" 
+                  ng-model="datos.title"
+                  placeholder="Nombre a mostrar"/>
+          <textarea name="bio"
+                    cols="30" 
+                    rows="10"
+                    placeholder="Una breve descripción tuya"
+                    ng-model="datos.bio">
+          </textarea>
+        </form>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

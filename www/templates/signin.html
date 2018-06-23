@@ -1,0 +1,28 @@
+<ion-view view-title="Registrarse" hide-nav-bar="true">
+  <ion-content class="padding">
+    <div class="vertical-center signlogin">
+      <form ng-submit="signin(user)">
+        <div class="list">
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Correo electrónico</span>
+            <input name="email" type="email" ng-model="user.email">
+          </label>
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Nombre de usuario</span>
+            <input name="username" type="text"ng-model="user.username">
+          </label>
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Contraseña</span>
+            <input name="pwd1" type="password" ng-model="user.pwd1">
+          </label>
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Repetir contraseña</span>
+            <input name="pwd2" type="password" ng-model="user.pwd2">
+          </label>
+          <button class="button button-block button-light">Registrarse</button>
+        </div>
+      </form>
+      <a href="#/login" class="button button-light button-clear">Ingresar con una cuenta existente</a>
+    </div>
+  </ion-content>
+</ion-view>

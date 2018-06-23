@@ -1,0 +1,21 @@
+<ion-view view-title="Login" hide-nav-bar="true">
+  <ion-content class="padding">
+    <div class="vertical-center signlogin">
+      <img id="iglogo" src="img/instagram.png"/>
+      <form ng-submit="login(user)">
+        <div class="list">
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Correo o Nombre de usuario</span>
+            <input name="email" type="text" ng-model="user.email">
+          </label>
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Contraseña</span>
+            <input name="pwd" type="password" ng-model="user.pwd">
+          </label>
+          <button class="button button-block button-light">Ingresar</button>
+        </div>
+      </form>
+      <a href="#/signin" class="button button-light button-clear">Crear una cuenta nueva</a>
+    </div>
+  </ion-content>
+</ion-view>

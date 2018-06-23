@@ -1,0 +1,30 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <div class="buttons">
+      <button class="button button-icon ion-ios-arrow-thin-left" ng-click="modal.hide()">
+      </button>
+    </div>
+    <h1 class="title">Publicación</h1>
+  </ion-header-bar>
+  <ion-content class="post-modal">
+    <div class="posts-list">
+      <ig-post size="big"></ig-post>
+    </div>
+    <div class="sincomentarios" ng-show="!isThereMore() && !comments.length">No hay comentarios.</div>
+    <ul class="list comments">
+      <li class="item item-avatar" ng-repeat="comment in comments">
+        <img src="{{API_ROOT +'/img/profile/'+ (comment.opPicture || '0.jpg')}}">
+        <h2>
+          <a ng-click="modalPerfil(comment.opUsername)">{{comment.opUsername}}</a>
+          <span>{{moment(comment.tstamp).fromNow()}}</span>
+        </h2>
+        <p ng-bind-html="comment.content | parseFlags"></p>
+      </li>
+    </ul>
+    <ion-infinite-scroll
+      ng-if="isThereMore()"
+      on-infinite="loadMore()"
+      distance="1%">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-modal-view>

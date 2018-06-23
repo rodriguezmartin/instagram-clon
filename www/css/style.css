@@ -1,0 +1,406 @@
+/* Empty. Add your own CSS if you like */
+
+/* https://forum.ionicframework.com/t/slide-in-right-animation-for-ionicmodal/18882 */
+a{
+  color: #29559f;
+  text-decoration: none;
+}
+.slide-in-right {
+  transform: translate3d(100%, 0, 0); 
+}
+.slide-in-right.ng-enter, .slide-in-right > .ng-enter {
+  transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms; 
+}
+.slide-in-right.ng-enter-active, .slide-in-right > .ng-enter-active {
+  transform: translate3d(0, 0, 0); 
+}
+.slide-in-right.ng-leave, .slide-in-right > .ng-leave {
+  transition: all ease-in-out 250ms; 
+}
+
+.profile-img img{
+  border-radius: 50%;
+  width: 100%;
+}
+.profile-info p:first-child{
+  font-weight: 500;
+  font-size: 19px;
+}
+
+.posts-list .post.post-big .col-10{
+  flex-basis: 12%;
+  max-width: 12%;
+}
+.posts-list .post.post-big{
+  padding-bottom: 5px;
+}
+.posts-list .post.post-big > img{
+  width: 100%;
+}
+.posts-list .post.post-big div img{
+  width: 100%;
+  border-radius: 50%;
+}
+.posts-list .post.post-big .post-header{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+.posts-list .post.post-big .post-header a{
+  font-weight: 500;
+  color: #000;
+  font-size: 16px;
+}
+.posts-list .post.post-big .post-header span{
+  color: #8c8c8c;
+  font-size: 12px;
+  margin: 0 5px 1px;
+}
+.posts-list .post.post-big .post-buttons .button-icon{
+  min-height: auto;
+  line-height: 1;
+  padding: 0 6px;
+  transition: transform .1s;
+}
+.posts-list .post.post-big .post-buttons .button-icon::after{
+  display: none;
+}
+.posts-list .post.post-big .post-buttons .button-icon::before{
+  font-size: 24px;
+}
+.posts-list .post.post-big .post-buttons .counter{
+  display: inline-block;
+  margin: 4px 12px 2px 0;
+  color: #000;
+}
+.posts-list .post.post-big .post-buttons li:first-child .button-icon{
+  padding-left: 0;
+}
+.posts-list .post.post-big .post-buttons .liking{
+  transform: scale(.7,.7);
+}
+
+.posts-list .post.post-small{
+  width: 33vw;
+  height: 33vw;
+  align-items: center;
+  display: inline-flex;
+  vertical-align: top;
+  margin: 0 .3vw .3vw 0;
+}
+.posts-list .post.post-small:nth-child(3n){
+  margin-right: 0;
+}
+.posts-list .post.post-small img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.counters{
+  display: flex;
+  justify-content: space-between;
+}
+.counters span{
+  display: block;
+}
+.counters span:first-child{
+  font-size: 120%;
+  font-weight: 500;
+}
+.counters span:last-child{
+  font-size: 90%;
+  color: #5f5f5f;
+}
+
+.comments li{
+  border: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.comments li .item-avatar > img:first-child{
+  top: 10px;
+}
+.comments h2 a{
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+}
+.comments li > p{
+  font-size: 14px;
+  color: #000;
+}
+.comments h2 span{
+  margin-left: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #c6c6c6;
+}
+.comments li > a{
+  font-size: 14px;
+  font-weight: 500;
+  color: #b9b9b9;
+}
+.post-modal .comments li{
+  padding-top: 7px;
+  padding-bottom: 7px; 
+}
+.post-modal .comments .item-avatar{
+  min-height: 52px;
+  padding-left: 63px;
+}
+.post-modal .comments .item-avatar img{
+  max-width: 35px;
+  max-height: 35px;
+}
+.post-modal .comments .item-avatar > img:first-child{
+  top: 12px;
+}
+
+.bar-footer{
+  border-top: 1px solid #b2b2b2;
+  background: #f8f8f8;
+  height: 49px;
+}
+.bar-footer label{
+  background: transparent;
+}
+.bar-footer form{
+  width: 100%;
+  padding: 0;
+}
+.bar-footer .item-input-inset{
+  padding: 5px 0;
+  background: transparent;
+  border: 0;
+}
+.bar-footer .item-input-inset input{
+  padding: 0;
+}
+
+.view-container > *[state=login],
+.view-container > *[state=signin]{
+  background: url('../img/bg.jpg') left center no-repeat;
+  background-size: cover;
+}
+
+#iglogo{
+  width: 130px;
+  height: 130px;
+  margin-bottom: 30px;
+}
+
+.vertical-center{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.signlogin form{
+  width: 80%;
+}
+.signlogin form label, .signlogin form label input{
+  background: transparent;
+  padding: 0;
+  border: 0;
+  margin: 5px 0 12px;
+}
+.signlogin form label input{
+  background: transparent;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+}
+.signlogin .input-label{
+  color: #fff;
+}
+.signlogin form a{
+  color: #fff;
+  background-color: transparent;
+}
+
+#capturar{
+  background: #232323;
+  height: calc(100vh - 49px);
+  display: flex;
+  flex-direction: column;
+}
+#camara{
+  height: 100vw;
+}
+#capturar .botones{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+#capturar .botones button{
+  margin: 25px 12px;
+}
+#capturar .botones button::before{
+  color: #fff;
+}
+#capturar #shot-btn::before{
+  font-size: 70px;
+}
+#capturar .medium-icon::before{
+  font-size: 45px;
+}
+#capturar .bigger-icon::before{
+  font-size: 60px;
+}
+#descriptionForm textarea{
+  width: 100%;
+  padding: 15px;
+  height: 90vh;
+}
+
+.list .hashtag{
+  padding: 10px 15px;
+}
+.list .hashtag p{
+  font-size: 15px;
+  color: #000;
+  margin: 0;
+}
+.list .hashtag span{
+  font-size: 12px;
+  color: #505050;
+}
+
+.searchSection .list{
+  margin-top: 42px;
+}
+.searchSection .list > p{
+  padding: 15px;
+  color: #a7a7a7;
+}
+.list .item-divider{
+  background: transparent;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.ig-tabs-header{
+  border: 1px solid #e3e3e3;
+  border-left: 0;
+  border-right: 0;
+}
+
+.empty-state{
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20vw;
+}
+.empty-state h1{
+  font-size: 18px;
+  width: 70vw;
+  max-width: 200px;
+}
+.empty-state p{
+  width: 70vw;
+  max-width: 200px;
+}
+.empty-state img{
+  max-width: 100px;
+  margin-top: 10px;
+}
+.divider-with-tabs{
+  display: flex;
+  justify-content: space-between;
+}
+.ig-tabs button{
+  background-color: transparent;
+  border: 0;
+}
+.ig-tabs button span{
+  margin-left: 5px;
+}
+.profile-tabs{
+  text-align: right;
+  padding: 0 4px 8px 4px;
+  border-bottom: 1px solid #c6c6c6;
+}
+
+.repost-text{
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.searchSection .scroll-refresher{
+  top: -18px;
+}
+
+.sincomentarios{
+  padding: 2px 10px 30px 50px;
+}
+
+
+.chat p{
+  text-align: left;
+  padding: 7px 10px 5px;
+  border-radius: 15px;
+  background: #e6e6e6;
+  margin: 0 0 5px;
+}
+.chat .me{
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+.chat .reciever{
+  display: flex;
+}
+.chat .reciever img{
+  width: 34px;
+  height: 34px;
+  margin-right: 7px;
+  border-radius: 50%;
+}
+.chat .reciever + .reciever img{
+  opacity: 0;
+}
+.chat .reciever p{
+  border: 1px solid #c2c2c2;
+  background: #fff;
+}
+
+.empty-state.es-chats img{
+  max-width: 220px;
+  margin-top: 10px;
+}
+
+.list.chatlist{
+  border-color: #efefef;
+}
+
+.repostedMsg{
+  background: #293566;
+  margin: -6px 0 0 0;
+  padding: 5px 15px;
+  color: #fff;
+}
+.repostedMsg a{
+  color: #cbd8ef;
+}
+
+.icon-button.ion-log-out{
+  border-color: transparent;
+}
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, 
+ion-tabs.tabs-color-active-positive .tab-item.active, 
+ion-tabs.tabs-color-active-positive .tab-item.activated {
+  color: #455e87;
+}
+.button.button-positive{
+  background-color: #4b7ac9;
+}

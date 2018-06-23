@@ -1,0 +1,16 @@
+<ion-view view-title="Conversaciones">
+  <ion-content>
+    <div ng-show="!isThereMore() && !chats.length" class="empty-state es-chats" >
+      <h1>¡Nada que mostrar!</h1>
+      <img src="img/chat.png">
+      <p>Iniciá una conversación pulsando en el globito de los perfiles de las personas</p>
+    </div>
+    <div class="list chatlist">
+      <a ng-repeat="chat in chats" class="item item-avatar" ng-click="modalChat(chat.partnerId)">
+        <img src="{{API_ROOT +'/img/profile/'+ (chat.partnerPicture || '0.jpg')}}">
+        <h2>{{chat.partnerUsername}}</h2>
+        <p>{{chat.lastMessage}}</p>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

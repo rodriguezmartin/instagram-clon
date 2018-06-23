@@ -1,0 +1,24 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <div class="buttons">
+      <button class="button button-icon ion-ios-arrow-thin-left" ng-click="modal.hide()">
+      </button>
+    </div>
+    <h1 class="title">Publicación</h1>
+    <div class="buttons">
+      <button class="button button-icon ion-ios-checkmark" ng-click="submitForm()">
+      </button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <p ng-show="repostText" class="repost-text padding">{{repostText}}<br>------</p>
+    <form ng-submit="publish(post)" name="forms.descriptionForm" id="descriptionForm">
+      <textarea name="descr"
+                cols="30" 
+                rows="10"
+                placeholder="Escribe una descripcion..."
+                ng-model="post.descr">
+      </textarea>
+    </form>
+  </ion-content>
+</ion-modal-view>

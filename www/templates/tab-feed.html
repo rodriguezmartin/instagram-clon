@@ -1,0 +1,18 @@
+<ion-view view-title="Instagram">
+  <ion-content>
+    <ion-refresher on-refresh="refresh()"></ion-refresher>
+    <div class="empty-state" ng-show="!isThereMore() && !posts.length">
+      <h1>¡Nada que mostrar!</h1>
+      <p>Seguí a tus usuarios favoritos para que sus publicaciones nuevas aparezcan al instante en esta sección</p>
+      <img src="img/emptyfeed.png">
+    </div>
+    <div class="posts-list">
+      <ig-post size="big" ng-repeat="post in posts"></ig-post>
+    </div>
+    <ion-infinite-scroll
+      ng-if="isThereMore()"
+      on-infinite="loadMore()"
+      distance="30%">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>
